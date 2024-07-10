@@ -1,0 +1,9 @@
+---
+const {class:ClassName} = Astro.props
+---
+
+<button class=` flex items-center justify-center gap-2 rounded-lg py-1 px-2 ${ClassName}`>
+    <slot name="left"/>
+    <slot/>
+    <slot name="rigth"/>
+</button>

@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "@/components/Header.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+
+const experienceItem = [
+  {
+    Puesto: "Ingennier Developer",
+    Empresa: "Grupo Monge",
+    FechaInicio: "2022",
+    FechaFin: "Currently",
+    CurrentLy: true,
+  },
+  {
+    Puesto: "Web Developer",
+    Empresa: "Poriun",
+    FechaInicio: "2019",
+    FechaFin: "2019",
+    CurrentLy: false,
+  },
+  {
+    Puesto: "Teach Lead",
+    Empresa: "Cs50X.NI",
+    FechaInicio: "2017",
+    FechaFin: "2018",
+    CurrentLy: false,
+  },
+];
+
+const AboutMySkill = [
+  {
+    Title: "About my Works",
+    Description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere quam veritatis fugit nulla iure voluptas, commodi omnis aperiam quas, architecto excepturi, dolorem dignissimos itaque veniam numquam error quidem quis!",
+  },
+  {
+    Title: "Design and Solutions",
+    Description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere quam veritatis fugit nulla iure voluptas.",
+  },
+  {
+    Title: "Responsive Design",
+    Description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere quam veritatis fugit nulla iure voluptas.",
+  },
+  {
+    Title: "Research and Testing",
+    Description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere quam veritatis fugit nulla iure voluptas.",
+  },
+  {
+    Title: "Collaborative Project",
+    Description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facere quam veritatis fugit nulla iure voluptas.",
+  },
+];
+
+
+function findMax(nums:any[]){
+  nums.sort()
+  return nums.;
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Header />
+    <SectionContainer>
+      <Hero />
+    </SectionContainer>
+    <SectionContainer>
+      <div class="flex justify-between items-stretch gap-5">
+        <div
+          class="flex-1 rounded-lg bg-gray-700/10 ring-1 ring-gray-700/90 p-5">
+          <h2 class="text-xl font-semibold text-white/80">
+            My Work Experience
+          </h2>
+          <ul class="flex flex-col justify-between gap-5 py-4">
+            {
+              experienceItem.map(
+                ({ Puesto, Empresa, FechaFin, FechaInicio, CurrentLy }) => (
+                  <li class="flex justify-between ">
+                    <div>
+                      <h3
+                        class:list={[
+                          `text-lg`,
+                          { "text-green-700": CurrentLy },
+                        ]}>
+                        {Puesto}
+                      </h3>
+                      <p class="text-sm text-white/70">
+                        {FechaInicio} - {FechaFin}
+                      </p>
+                    </div>
+                    <p class="text-lg">{Empresa}</p>
+                  </li>
+                )
+              )
+            }
+          </ul>
+        </div>
+        <div class="flex-1 grid grid-cols-2 gap-4">
+          {
+            AboutMySkill.map(({ Title, Description }) => (
+              <div
+                class:list={[
+                  "flex flex-col gap-2 justify-between rounded-lg bg-gray-700/10 ring-1 ring-gray-700/90 p-4",
+                  "first:col-span-2",
+                ]}>
+                <h2 class="text-lg font-semibold">{Title}</h2>
+                <p class="text-sm  text-white/80">{Description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>
