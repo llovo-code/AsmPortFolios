@@ -1,0 +1,28 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import Trajectory from "@/components/Trajectory.astro";
+---
+
+<Layout title="Welcome to Astro.">
+    <main>
+        <Header />
+        <SectionContainer>
+            <Hero />
+        </SectionContainer>
+        <SectionContainer>
+            <Trajectory />
+        </SectionContainer>
+        <SectionContainer>
+            <footer class="flex">
+                <div></div>
+                <div class="flex justify-around">
+                    <div></div>
+                </div>
+                <div></div>
+            </footer>
+        </SectionContainer>
+    </main>
+</Layout>
