@@ -1,0 +1,59 @@
+---
+import GithubIcon from "@/icons/GithubIcon.astro";
+import LinkedinIcon from "@/icons/LinkedinIcon.astro";
+import YoutubeIcon from "@/icons/YoutubeIcon.astro";
+import CodeIcon from "@/icons/CodeIcon.astro";
+
+const socialItems = [
+  {
+    name: "Github",
+    url: "https://github.com/llovo-code",
+    icon: GithubIcon,
+    labelName: "github",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/lewin-lovo-07303821b/",
+    icon: LinkedinIcon,
+    labelName: "linkedin",
+  },
+  {
+    name: "Youtube",
+    url: "https://www.youtube.com",
+    icon: YoutubeIcon,
+    labelName: "youtube",
+  },
+];
+---
+
+<footer
+  class="flex justify-around md:justify-between rounded-lg bg-gray-700/10 ring-1 ring-gray-700/90 p-5"
+>
+  <div>
+    <picture
+      class="flex items-center justify-center rounded-full size-10 bg-gray-700/10 ring-1 ring-gray-700/90"
+    >
+      <CodeIcon class="text-green-500" />
+    </picture>
+  </div>
+  <div class="flex justify-around gap-10">
+    {
+      socialItems.map((item) => (
+        <a
+          class="flex flex-row gap-2 items-center justify-center  [&>span]:hidden  [&>span]:hover:block transition ease-in delay-150 "
+          href={item.url}
+          aria-label={item.labelName}
+        >
+          <item.icon class="size-5 transition ease-in-out delay-150 hover:scale-150" />
+          <span class="text-sm font-semibold">{item.name}</span>
+        </a>
+      ))
+    }
+  </div>
+  <div
+    class="hidden sm:flex justify-center items-center gap-2 hover:text-green-600"
+  >
+    <div class="size-2 rounded-full bg-green-700"></div>
+    <p class="text-sm">Aviable To Work</p>
+  </div>
+</footer>

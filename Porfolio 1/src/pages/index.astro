@@ -4,31 +4,7 @@ import Header from "@/components/Header.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import Trajectory from "@/components/Trajectory.astro";
-import GithubIcon from "@/icons/GithubIcon.astro";
-import LinkedinIcon from "@/icons/LinkedinIcon.astro";
-import YoutubeIcon from "@/icons/YoutubeIcon.astro";
-import CodeIcon from "@/icons/CodeIcon.astro";
-
-const socialItems = [
-  {
-    name: "Github",
-    url: "https://github.com/llovo-code",
-    icon: GithubIcon,
-    labelName: "github",
-  },
-  {
-    name: "Linkedin",
-    url: "https://www.linkedin.com/in/lewin-lovo-07303821b/",
-    icon: LinkedinIcon,
-    labelName: "linkedin",
-  },
-  {
-    name: "Youtube",
-    url: "https://www.youtube.com",
-    icon: YoutubeIcon,
-    labelName: "youtube",
-  },
-];
+import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -41,31 +17,7 @@ const socialItems = [
       <Trajectory />
     </SectionContainer>
     <SectionContainer>
-      <footer
-        class="flex justify-between rounded-lg bg-gray-700/10 ring-1 ring-gray-700/90 p-5"
-      >
-        <div>
-          <picture
-            class="flex items-center justify-center rounded-full size-10 bg-gray-700/10 ring-1 ring-gray-700/90"
-          >
-            <CodeIcon class="text-green-500" />
-          </picture>
-        </div>
-        <div class="flex justify-around gap-5">
-          {
-            socialItems.map((item) => (
-              <a
-                class="flex gap-2 items-center justify-center"
-                href={item.url}
-                aria-label={item.labelName}
-              >
-                <item.icon class="size-4" /> {item.name}
-              </a>
-            ))
-          }
-        </div>
-        <div></div>
-      </footer>
+      <Footer />
     </SectionContainer>
   </main>
 </Layout>
