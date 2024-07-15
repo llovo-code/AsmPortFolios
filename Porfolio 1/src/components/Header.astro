@@ -1,37 +1,46 @@
 ---
-import CodeIcon from "@/icons/CodeIcon.astro"
+import CodeIcon from "@/icons/CodeIcon.astro";
 
-const navItems =[
-    {
-        title:"About Me",
-        label:"aboutMe",
-        url:"/#"
-    },{
-        title:"Projects",
-        label:"projects",
-        url:"/#projects"
-    },{
-        title:"Contact Me",
-        label:"contactMe",
-        url:"mailto:lewinjoselovo@gmail.com"
-    }
-]
-
+const navItems = [
+  {
+    title: "About Me",
+    label: "aboutMe",
+    url: "/#",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+  {
+    title: "Contact Me",
+    label: "contactMe",
+    url: "mailto:lewinjoselovo@gmail.com",
+  },
+];
 ---
 
 <header class="mx-2 my-2">
-    <nav class="flex gap-2 justify-between items-center ">
-        <picture class="flex items-center justify-center rounded-full size-10 bg-gray-700/10 ring-1 ring-gray-700/90">
-            <CodeIcon class=" text-green-500"/>
-        </picture>
-        <div class="w-full py-2 px-5 flex justify-between items-center rounded-full bg-gray-700/10 ring-1 ring-gray-700/90">
-            {
-                navItems.map(item => (
-                    <a aria-label={item.label} href={item.url} class="hover:text-green-500 font-semibold">
-                    {item.title}
-                    </a>
-                ))
-            }
-        </div>
-    </nav>
+  <nav class="flex gap-2 justify-between items-center">
+    <picture
+      class="flex items-center justify-center rounded-full size-10 bg-gray-700/10 ring-1 ring-gray-700/90"
+    >
+      <CodeIcon class="text-green-500" />
+    </picture>
+    <div
+      class="w-full py-2 px-5 flex justify-between items-center rounded-full bg-gray-700/10 ring-1 ring-gray-700/90"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            aria-label={item.label}
+            href={item.url}
+            class="hover:text-green-500 font-semibold first:text-green-600"
+          >
+            {item.title}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
 </header>
